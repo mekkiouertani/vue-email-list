@@ -9,7 +9,7 @@
 </head>
 <body>
    <div id="app">
-      <ul>
+      <ul v-show="mailList.length === mailToGenerate">
          <li v-for="mail in mailList">{{mail}}</li>
       </ul>
 

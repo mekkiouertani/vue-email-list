@@ -13,7 +13,10 @@ const { createApp } = Vue
         mounted(){
             for(let i = 0; i < this.mailToGenerate; i++){
                 axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((mail)=>{
-                    this.mailList.push(mail.data.response)
+                    this.$nextTick(() => { 
+                        this.mailList.push(mail.data.response)
+                    });
+                    
                 })
             }
         },
