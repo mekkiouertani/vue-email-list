@@ -12,9 +12,8 @@ const { createApp } = Vue
         },
         mounted(){
             for(let i = 0; i < this.mailToGenerate; i++){
-
                 axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((mail)=>{
-                    console.log(mail.data.response);
+                    this.mailList.push(mail.data.response)
                 })
             }
         },
