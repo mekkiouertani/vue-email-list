@@ -11,6 +11,7 @@
 <body>
    <div id="app">
       <div class="container">
+         
          <h1>Generatore di MAIL</h1>
          <h5>N.{{mailToGenerate}} mail generate</h5>
          
@@ -19,7 +20,11 @@
               <button @click="valueMGenerate" type="button" class="input-group-text">Invia</button>
             </div>
             <input type="text" v-model.number="nValue" @keyup.enter="valueMGenerate" class="form-control" placeholder="Yo bello! Quante mail ti stampo? Faccio un buon prezzo" aria-label="Username" aria-describedby="basic-addon1">
-          </div>
+         </div>
+         
+         <div class="alert alert-danger" v-show="alert">
+            Inserisci solo numeri
+         </div>
 
          <ul v-show="mailList.length === mailToGenerate || mailToGenerate === nValue" class="list-group ">
             <li v-for="mail in mailList" class="list-group-item">{{mail}}</li>
